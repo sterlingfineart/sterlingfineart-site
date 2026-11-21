@@ -176,12 +176,26 @@
     <h2>Get in Touch</h2>
     <hr class="h2rule">
     <div class="contact">
-      <p class="name">John Finnegan, Esq.</p>
-      <p class="title">Managing Director</p>
-      <p><a href="mailto:artsadvisor@gmail.com">artsadvisor@gmail.com</a></p>
+      <p><a href="#" id="contactReveal">Click to display name and email</a></p>
+      <div id="contactDetails" hidden>
+        <p class="name">John Finnegan, Esq.</p>
+        <p class="title">Managing Director</p>
+        <p><a id="contactEmail" href="#">Email</a></p>
+      </div>
       <p><a href="tel:+12066171444">206-617-1444</a></p>
       <p>Portland &amp; Seattle</p>
     </div>
+    <script>
+      document.getElementById('contactReveal').addEventListener('click', function (e) {
+        e.preventDefault();
+        var u = 'artsadvisor', d = 'gmail.com';
+        var a = document.getElementById('contactEmail');
+        a.href = 'mailto:' + u + '@' + d;
+        a.textContent = u + '@' + d;
+        document.getElementById('contactDetails').hidden = false;
+        this.style.display = 'none';
+      });
+    </script>
   </section>
 
   <footer>
